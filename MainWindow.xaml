@@ -1,0 +1,72 @@
+﻿<Window x:Class="Task2_AdoNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2_AdoNet"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Beige">
+            <TextBox x:Name="SearchTextbox"
+                     Margin="15"
+                     Foreground="Black"
+                     TextAlignment="Left"
+                     TextChanged="SearchTextbox_TextChanged">
+            </TextBox>
+        </Grid>
+
+        <Label Grid.Row="1" Background="Black"/>
+
+        <Grid Grid.Row="2" Background="Beige">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" 
+                    x:Name="FillBtn"
+                    Margin="8"
+                    Content="Fill" Click="FillBtn_Click"/>
+
+            <Button Grid.Column="1" 
+                    x:Name="InsertlBtn"
+                    Margin="8"
+                    Content="Insert" Click="InsertlBtn_Click"/>
+
+            <Button Grid.Column="2" 
+                    x:Name="UpdateBtn"
+                    Margin="8"
+                    Content="Update" Click="UpdateBtn_Click"/>
+
+            <Button Grid.Column="3" 
+                    x:Name="DeleteBtn"
+                    Margin="8"
+                    Content="Delete" Click="DeleteBtn_Click"/>
+
+
+        </Grid>
+
+        <Label Grid.Row="3" Background="Black"/>
+
+        <Grid Grid.Row="4" Background="Beige">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="277*"/>
+                <ColumnDefinition Width="523*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="DataGridView" Margin="8,8,8,8" Grid.ColumnSpan="2"/>
+        </Grid>
+
+    </Grid>
+</Window>
